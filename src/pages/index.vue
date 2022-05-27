@@ -35,7 +35,7 @@ function toWards(): void {
 
 function checkGame(next: number): boolean {
   if (snake.value.length === 100) {
-    alert('you are great')
+    alert(`哇哦！ 😍${snake.value.length}厘米`)
     return true
   }
 
@@ -43,7 +43,7 @@ function checkGame(next: number): boolean {
     || (next < 0 || next > map.value.length)
     || (direction.value === 1 && next % 10 === 0)
     || (direction.value === -1 && next % 10 === 9)) {
-    alert('game over')
+    alert(`😍${snake.value.length}厘米`)
     return true
   }
   return false
@@ -96,7 +96,7 @@ function reset() {
     <div flex="~" justify-center items-center w-102 flex-wrap border-2>
       <div
         v-for="(item, index) in map" :key="item + index"
-        :class="[worm === index ? '' : '', snake.includes(index) ? 'bg-black' : '']"
+        :class="[worm === index ? 'bg-gray' : '', snake.includes(index) ? 'bg-black' : '']"
         w-10 h-10 flex="~" justify-center items-center
       />
     </div>
