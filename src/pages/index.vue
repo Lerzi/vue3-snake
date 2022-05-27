@@ -96,7 +96,7 @@ function reset() {
     <div flex="~" justify-center items-center w-102 flex-wrap border-2>
       <div
         v-for="(item, index) in map" :key="item + index"
-        :class="[worm === index ? 'bg-gray' : '', snake.includes(index) ? 'bg-black' : '']"
+        :class="[worm === index ? '' : '', snake.includes(index) ? 'bg-black' : '']"
         w-10 h-10 flex="~" justify-center items-center
       />
     </div>
