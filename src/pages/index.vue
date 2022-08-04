@@ -81,6 +81,19 @@ function reset() {
     toWards()
   }, speed.value)
 }
+
+onKeyStroke(['w', 'W', 'ArrowUp'], () => {
+  up()
+})
+onKeyStroke(['s', 'S', 'ArrowDown'], () => {
+  down()
+})
+onKeyStroke(['a', 'A', 'ArrowLeft'], () => {
+  left()
+})
+onKeyStroke(['d', 'D', 'ArrowRight'], () => {
+  right()
+})
 </script>
 
 <template>
@@ -94,11 +107,9 @@ function reset() {
       </button>
     </div>
     <div flex="~" justify-center items-center w-102 flex-wrap border-2>
-      <div
-        v-for="(item, index) in map" :key="item + index"
-        :class="[worm === index ? 'bg-gray' : '', snake.includes(index) ? 'bg-black' : '']"
-        w-10 h-10 flex="~" justify-center items-center
-      />
+      <div v-for="(item, index) in map" :key="item + index"
+        :class="[worm === index ? 'bg-gray' : '', snake.includes(index) ? 'bg-black' : '']" w-10 h-10 flex="~"
+        justify-center items-center />
     </div>
     <div>
       <div>
